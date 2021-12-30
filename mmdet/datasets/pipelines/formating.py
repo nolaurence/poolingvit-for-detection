@@ -129,7 +129,7 @@ class Transpose:
 
     def __repr__(self):
         return self.__class__.__name__ + \
-               f'(keys={self.keys}, order={self.order})'
+            f'(keys={self.keys}, order={self.order})'
 
 
 @PIPELINES.register_module()
@@ -259,7 +259,7 @@ class DefaultFormatBundle:
 
     def __repr__(self):
         return self.__class__.__name__ + \
-               f'(img_to_float={self.img_to_float})'
+            f'(img_to_float={self.img_to_float})'
 
 
 @PIPELINES.register_module()
@@ -335,7 +335,7 @@ class Collect:
 
     def __repr__(self):
         return self.__class__.__name__ + \
-               f'(keys={self.keys}, meta_keys={self.meta_keys})'
+            f'(keys={self.keys}, meta_keys={self.meta_keys})'
 
 
 @PIPELINES.register_module()

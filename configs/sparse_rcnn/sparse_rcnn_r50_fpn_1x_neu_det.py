@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/datasets/neu_det.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
+    '../_base_/schedules/schedule_2x.py', '../_base_/default_runtime.py'
 ]
 num_stages = 6
 num_proposals = 100

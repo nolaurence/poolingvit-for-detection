@@ -15,7 +15,7 @@ model = dict(
         out_channels=128,
         num_csp_blocks=1),
     bbox_head=dict(
-        type='YOLOXHead', num_classes=80, in_channels=128, feat_channels=128),
+        type='YOLOXHead', num_classes=6, in_channels=128, feat_channels=128),
     train_cfg=dict(assigner=dict(type='SimOTAAssigner', center_radius=2.5)),
     # In order to align the source code, the threshold of the val phase is
     # 0.01, and the threshold of the test phase is 0.001.
@@ -111,14 +111,14 @@ data = dict(
 # default 8 gpu
 optimizer = dict(
     type='SGD',
-    lr=0.01,
+    lr=0.00125,
     momentum=0.9,
     weight_decay=5e-4,
     nesterov=True,
     paramwise_cfg=dict(norm_decay_mult=0., bias_decay_mult=0.))
 optimizer_config = dict(grad_clip=None)
 
-max_epochs = 300
+max_epochs = 100
 num_last_epochs = 15
 resume_from = None
 interval = 10
@@ -164,3 +164,5 @@ evaluation = dict(
     dynamic_intervals=[(max_epochs - num_last_epochs, 1)],
     metric='bbox')
 log_config = dict(interval=50)
+
+load_from = "weights/yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth"

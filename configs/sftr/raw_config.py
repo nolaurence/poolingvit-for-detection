@@ -91,4 +91,4 @@ optimizer_config = dict(_delete_=True, grad_clip=dict(max_norm=1, norm_type=2))
 # learning policy
 lr_config = dict(policy='step', step=[27, 33])
 runner = dict(type='EpochBasedRunner', max_epochs=36)
-load_from = "weights/sparse_rcnn_r50_fpn_1x_coco_20201222_214453-dc79b137.pth"
+# load_from = "weights/sparse_rcnn_r50_fpn_1x_coco_20201222_214453-dc79b137.pth"
